@@ -14,6 +14,7 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/Cellar/:$PATH"
 export PATH="/usr/local/Cellar/postgresql@15/15.7/bin:$PATH"
@@ -37,7 +38,7 @@ function dev
     set prev_dir (pwd)
 
     # Run fzf to select a directory from ~/dev
-    set selected_dir (cd ~/dev; fdfind --type d --strip-cwd-prefix | fzf)
+    set selected_dir (cd ~/dev; fd --type d --strip-cwd-prefix | fzf)
 
     # Check the exit status of fzf
     if test $status -eq 0
@@ -50,7 +51,7 @@ function dev
 end
  
 function cdd 
-    set selected_dir (cd ~; fdfind -H --type d --strip-cwd-prefix | fzf)
+    set selected_dir (cd ~; fd -H --type d --strip-cwd-prefix | fzf)
     # Check the exit status of fzf
     if test $status -eq 0
         # If fzf was successful (i.e., a selection was made), change to the selected directory
@@ -64,7 +65,7 @@ function n
     set prev_dir (pwd)
 
     # Run fzf to select a directory from ~/dev
-    set selected_file (cd ~; fdfind -H --type f --strip-cwd-prefix | fzf)
+    set selected_file (cd ~; fd -H --type f --strip-cwd-prefix | fzf)
 
     # Check the exit status of fzf
     if test $status -eq 0
