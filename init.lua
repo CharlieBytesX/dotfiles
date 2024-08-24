@@ -32,7 +32,7 @@ local colorschemes = {
   Nord = 'nord',
   Torte = 'torte',
 }
-local colorscheme = colorschemes.Mocha
+local colorscheme = colorschemes.RosepineMoon
 
 vim.cmd('colorscheme ' .. colorscheme)
 

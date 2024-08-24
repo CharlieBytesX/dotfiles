@@ -67,9 +67,9 @@ end
 local function search_all_files_except_node_modules()
   require('telescope.builtin').find_files({
     find_command = {
-      'rg', '--files', '--hidden', '--glob', '!.git/', '--glob', '!.node_modules/**', '!target/**'
+      'rg', '--files', '--hidden', '--glob', '!.git/*', '--glob', '!.node_modules/**', '--glob', '!target/**'
     },
-    prompt_title = "< Search All Files Except .node_modules >",
+    prompt_title = "< Search All Files Except .git, .node_modules, and target >",
   })
 end
 
