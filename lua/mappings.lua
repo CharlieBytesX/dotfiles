@@ -11,14 +11,17 @@ vim.keymap.set('n', 'N', 'Nzz', { silent = true, noremap = true })
 
 vim.keymap.set('n', '<leader>v', ':vsplit<cr>', { silent = true, noremap = true, desc = 'split' })
 
+-- copy and paste
+--
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { silent = true, noremap = true, desc = 'copy to system clipboard ' })
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p', { silent = true, noremap = true, desc = 'paste from system clipbard' })
 
 -- Custom
 vim.keymap.set({ 'n' }, 'L', ':b#<cr>', { silent = true, noremap = true }) -- go to previous buffer
 
 -- Quick fix
-vim.keymap.set('n', '<Leader>n', ':cnext<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<Leader>p', ':cprev<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>q', ':cclose<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>j', ':cnext<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>k', ':cprev<CR>', { noremap = true, silent = true })
 
 -- TODO
 vim.keymap.set('n', '<Leader>Q', ':TodoQuickFix<CR>', { noremap = true, silent = true, desc = 'Show todo quick fix' })
@@ -38,7 +41,8 @@ vim.keymap.set('n', '<leader>w', ':w<cr>', { desc = 'save', noremap = true })
 vim.keymap.set('n', '<leader>x', ':bd<cr>', { desc = 'Close buffer', noremap = true })
 
 -- Neotree
-vim.keymap.set('n', '<leader>e', ':Neotree toggle<cr>', { desc = 'Toggle neotree', noremap = true })
+vim.keymap.set('n', '<leader>e', ':silent! Neotree toggle<cr>',
+    { desc = 'Toggle neotree', noremap = true, silent = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>lk', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
@@ -53,9 +57,9 @@ if HARPOON_IS_ACTIVE then
     vim.keymap.set('n', '<leader>ha', function()
         harpoon:list():append()
     end, { desc = 'Add to harpoon' })
-    vim.keymap.set('n', '<leader>j', function()
-        harpoon.ui:toggle_quick_menu(harpoon:list())
-    end)
+    -- vim.keymap.set('n', '<leader>j', function()
+    --     harpoon.ui:toggle_quick_menu(harpoon:list())
+    -- end)
 
     vim.keymap.set('n', '<C-j>', function()
         harpoon:list():select(1)

@@ -11,6 +11,7 @@ require('telescope').setup {
         },
         n = {
           ["<c-d>"] = require('telescope.actions').delete_buffer + require('telescope.actions').move_to_top,
+          ["<leader>q"] = require('telescope.actions').send_to_qflist,
         }
       }
     }
@@ -23,6 +24,9 @@ require('telescope').setup {
         ['<C-u>'] = false,
         ['<C-d>'] = false,
       },
+      n = {
+        ["<leader>q"] = require('telescope.actions').send_to_qflist,
+      }
     },
   },
 }

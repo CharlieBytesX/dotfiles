@@ -38,10 +38,13 @@ On_attach = function(_, bufnr)
   nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
 
   nmap('K', vim.lsp.buf.hover, 'hover')
-  nmap('<leader>lr', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<leader>lr', function()
+    vim.lsp.buf.rename()
+    vim.cmd("wa")
+  end, '[R]e[n]ame and save')
   nmap('<leader>lt', toggle_inlay_hints, '[T]oggle inlay hints')
   nmap('<leader>la', function()
-    vim.lsp.buf.code_action { context = { diagnostics = {}, only = { 'quickfix', 'refactor', 'source', '' } } }
+    vim.lsp.buf.code_action { context = { only = { 'quickfix', 'refactor', 'source', '' } } }
   end, '[C]ode [A]ction')
 
   nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
