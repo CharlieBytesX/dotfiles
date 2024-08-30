@@ -18,6 +18,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p', { silent = true, noremap = true
 
 -- Custom
 vim.keymap.set({ 'n' }, 'L', ':b#<cr>', { silent = true, noremap = true }) -- go to previous buffer
+vim.keymap.set({ 'n', 'v' }, 'mm', '%', { silent = true, noremap = true }) -- go to matching brackend
 
 -- Quick fix
 vim.keymap.set('n', '<Leader>j', ':cnext<CR>', { noremap = true, silent = true })
