@@ -24,10 +24,11 @@ return {
       -- vim.g.everforest_background = "hard"
     end,
   },
+  { "yorickpeterse/nvim-grey" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "everforest",
+      colorscheme = "grey",
     },
   },
 }
