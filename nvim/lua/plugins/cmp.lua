@@ -1,7 +1,17 @@
 return {
   {
     "saghen/blink.cmp",
+
     opts = {
+
+      -- Show documentation when selecting a completion item
+      completion = {
+        ghost_text = {
+          enabled = false,
+        },
+      },
+
+      -- Display a preview of the selected item on the current line
       keymap = {
         preset = "none",
         ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
