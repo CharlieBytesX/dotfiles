@@ -9,6 +9,10 @@ return {
         ghost_text = {
           enabled = false,
         },
+
+        menu = {
+          auto_show = false,
+        },
       },
 
       -- Display a preview of the selected item on the current line

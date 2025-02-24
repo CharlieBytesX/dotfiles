@@ -25,10 +25,11 @@ return {
     end,
   },
   { "yorickpeterse/nvim-grey" },
+  { "ellisonleao/gruvbox.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "grey",
+      colorscheme = "mytheme",
     },
   },
 }
