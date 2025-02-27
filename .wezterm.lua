@@ -20,6 +20,10 @@ dark_scheme = "Chalk (Gogh)"
 default_color_scheme = dark_scheme
 
 config.color_scheme = "rose-pine-dawn"
+config.enable_tab_bar = true
+-- config.default_cursor_style = "BlinkingBar"
+
+config.window_decorations = "RESIZE"
 
 -- Function to read the current mode from the file
 local function read_mode_from_file()

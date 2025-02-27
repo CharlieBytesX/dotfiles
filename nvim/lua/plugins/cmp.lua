@@ -9,9 +9,10 @@ return {
         ghost_text = {
           enabled = false,
         },
+        list = { selection = { preselect = false, auto_insert = false } },
 
         menu = {
-          auto_show = false,
+          auto_show = true,
         },
       },
 

@@ -11,7 +11,8 @@ end
 o.background = "light"
 g.colors_name = "mytheme"
 
-local background = "#f2f2f2"
+-- local background = "#f2f2f2"
+local background = "#E0E2EA"
 local grey_bg_light = "#ececec"
 local black = "#000000"
 local blue = "#1561b8"
@@ -21,7 +22,7 @@ local light_red = "#f2d3cd"
 local red = "#c4331d"
 local grey = "#5e5e5e"
 local light_grey = "#e6e6e6"
-local light_grey2 = "#c6c6ca"
+local light_grey2 = "#a6a6a6"
 local border = "#cccccc"
 local highlight = "#eeeeee"
 local dark_yellow = "#b37f02"
@@ -31,6 +32,8 @@ local orange = "#a55000"
 local purple = "#007872"
 local white = "#ffffff"
 local cyan = "#007872"
+
+local dark_grey = "#4e4e4e"
 
 g.terminal_color_0 = black
 g.terminal_color_1 = red
@@ -67,7 +70,7 @@ local highlights = {
   Boolean = { link = "Keyword" },
   Character = { link = "String" },
   ColorColumn = { bg = highlight },
-  Comment = { fg = grey },
+  Comment = { fg = dark_grey, italic = true, bold = true },
   Conceal = {},
   Constant = { fg = black, bold = true },
   Cursor = { bg = black },
