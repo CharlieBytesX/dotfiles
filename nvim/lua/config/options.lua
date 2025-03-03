@@ -5,3 +5,5 @@
 vim.g.forestbones = {
   darkness = "stark",
 }
+
+vim.o.cursorline = false
