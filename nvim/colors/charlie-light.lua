@@ -6,15 +6,15 @@ end
 -- Color palette
 vim.g.colors_name = "waza"
 local palette = {
-  background = "#ffffff", -- Lightened version of #052c31
+  background = "#FCF5E2", -- Lightened version of #052c31
   color2 = "#1e1e1e",
   color3 = "#1e1e1e",
   comment = "#008000",
-  selection = "#b0b0b0",
+  selection = "#e8e8e8",
   color4 = "#3c8994",
   color5 = "#3c8994",
   color7 = "#c5a453",
-  color8 = "#dadada",
+  color8 = "#A6A399",
   color9 = "#3c8994",
   color10 = "#1e1e1e",
   color11 = "#1e1e1e",
@@ -64,6 +64,7 @@ vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = palette.color8 })
 vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { fg = palette.color8 })
 vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { fg = palette.color8 })
 vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { fg = palette.color8 })
+vim.api.nvim_set_hl(0, "LspInlayHint", { fg = palette.color8, italic = true })
 
 -- Gutter signs
 vim.api.nvim_set_hl(0, "SignColumn", { bg = palette.background })
