@@ -16,8 +16,8 @@ local palette = {
   color7 = "#c5a453",
   color8 = "#4d6b6a",
   color9 = "#56b6c2",
-  color10 = "#A9A28E",
-  color11 = "#A9A28E",
+  color10 = "#B7B59D",
+  color11 = "#B7B59D",
 }
 
 -- Basic UI

@@ -26,10 +26,10 @@ return {
   },
   { "yorickpeterse/nvim-grey" },
   { "ellisonleao/gruvbox.nvim" },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "charlie-dark",
-    },
-  },
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     colorscheme = "everforest",
+  --   },
+  -- },
 }
