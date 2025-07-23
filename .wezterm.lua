@@ -7,7 +7,8 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 
-config.font = wezterm.font("JetbrainsMono Nerd Font")
+-- config.font = wezterm.font("JetbrainsMono Nerd Font")
+config.font = wezterm.font("Comic Code Ligatures")
 -- For example, changing the color scheme:
 
 ---cycle through builtin dark schemes in dark mode,

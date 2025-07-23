@@ -51,3 +51,6 @@ function kctx
   command kubectl config use-context $argv
 end
 
+status --is-interactive; and source ("/home/linuxbrew/.linuxbrew/bin/brew" shellenv | psub)
+
+string match -q "$TERM_PROGRAM" "kiro" and . (kiro --locate-shell-integration-path fish)
