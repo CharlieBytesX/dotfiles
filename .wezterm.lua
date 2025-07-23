@@ -16,7 +16,7 @@ config.font = wezterm.font("JetbrainsMono Nerd Font")
 -- light_scheme = "Material"
 light_scheme = "seoulbones_light"
 -- dark_scheme = "catppuccin-mocha"
-dark_scheme = "Chalk (Gogh)"
+dark_scheme = "rose-pine-dawn"
 default_color_scheme = dark_scheme
 
 config.color_scheme = "rose-pine-dawn"

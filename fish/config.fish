@@ -26,4 +26,28 @@ end
 
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+set --export RUSTC_WRAPPER sccache
 zoxide init fish | source
+
+# Generated for envman. Do not edit.
+test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# adds alias for "kubectl" to "kubecolor" with completions
+function kubectl --wraps kubectl
+  command kubecolor $argv
+end
+
+# adds alias for "k" to "kubecolor" with completions
+function k --wraps kubectl
+  command kubecolor $argv
+end
+# reuse "kubectl" completions on "kubecolor"
+function kubecolor --wraps kubectl
+  command kubecolor $argv
+end
+
+function kctx
+  command kubectl config use-context $argv
+end
+
