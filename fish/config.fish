@@ -32,7 +32,7 @@ zoxide init fish | source
 # Generated for envman. Do not edit.
 test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 # adds alias for "kubectl" to "kubecolor" with completions
 function kubectl --wraps kubectl
   command kubecolor $argv
