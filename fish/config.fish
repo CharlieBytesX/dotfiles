@@ -2,17 +2,7 @@ set fish_greeting
 
 source (/usr/local/bin/starship init fish --print-full-init | psub)
 # fastfetch
-# bun
-alias fd fdfind
-function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        builtin cd -- "$cwd"
-    end
-    rm -f -- "$tmp"
-end
-
+# bun alias fd fdfind
 function f
     set selected (fd --type d | fzf ) # Select directories
     if test -n "$selected"
@@ -20,19 +10,20 @@ function f
     end
 end
 function n
+
     fd | fzf -m | xargs -r nvim
 
 end
+
 
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 set --export RUSTC_WRAPPER sccache
 zoxide init fish | source
 
-# Generated for envman. Do not edit.
-test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
 
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 # adds alias for "kubectl" to "kubecolor" with completions
 function kubectl --wraps kubectl
   command kubecolor $argv
@@ -51,6 +42,30 @@ function kctx
   command kubectl config use-context $argv
 end
 
-status --is-interactive; and source ("/home/linuxbrew/.linuxbrew/bin/brew" shellenv | psub)
+# --- Cargo/Rust setup ---
+# Source Cargo environment if the file exists
 
-string match -q "$TERM_PROGRAM" "kiro" and . (kiro --locate-shell-integration-path fish)
+if test -f "$HOME/.cargo/env.fish"
+    source "$HOME/.cargo/env.fish"
+end
+# --- Homebrew/Linuxbrew setup ---
+# Check if 'brew' command is available in the PATH
+if type -q brew
+    # Source brew shellenv if in an interactive session
+    status --is-interactive; and source (brew shellenv | psub)
+end
+
+
+# --- Kiro integration ---
+# Check if 'kiro' command is available in the PATH
+
+
+if type -q mise
+    mise activate fish | source
+end
+# File system
+alias ls 'eza -lh --group-directories-first --icons=auto'
+alias lsa 'ls -a'
+alias lt 'eza --tree --level=2 --long --icons --git'
+alias lta 'lt -a'
+alias ff 'fzf --preview \"bat --style=numbers --color=always {}\"'
