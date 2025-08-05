@@ -19,6 +19,10 @@ end
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 set --export RUSTC_WRAPPER sccache
+set --export EDITOR nvim
+export PATH="/home/charlie/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/charlie/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
 zoxide init fish | source
 
 
@@ -60,12 +64,13 @@ end
 # Check if 'kiro' command is available in the PATH
 
 
-if type -q mise
-    mise activate fish | source
-end
+
 # File system
 alias ls 'eza -lh --group-directories-first --icons=auto'
 alias lsa 'ls -a'
 alias lt 'eza --tree --level=2 --long --icons --git'
 alias lta 'lt -a'
 alias ff 'fzf --preview \"bat --style=numbers --color=always {}\"'
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+mise activate fish | source
